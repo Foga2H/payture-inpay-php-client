@@ -1,5 +1,5 @@
 {
-  "name": "foga2h/payture-inpay-client",
+  "name": "foga2h/payture-inpay-php-client",
   "license": "MIT",
   "description": "Client for Payture InPay API",
   "keywords": [
@@ -39,7 +39,5 @@
     "ext-json": "*",
     "phpunit/phpunit": "^8.5",
     "friendsofphp/php-cs-fixer": "^2.14"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
