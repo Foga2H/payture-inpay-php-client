@@ -31,7 +31,7 @@
     "ext-simplexml": "*",
     "ext-mbstring": "*",
     "guzzlehttp/guzzle": "^7.4.5",
-    "psr/log": "^1.1",
+    "psr/log": "^3.0",
     "paillechat/php-enum": "^1.2"
   },
   "require-dev": {
