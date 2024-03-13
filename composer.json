@@ -1,6 +1,5 @@
 {
   "name": "foga2h/payture-inpay-client",
-  "version": "1.0.1",
   "license": "MIT",
   "description": "Client for Payture InPay API",
   "keywords": [
