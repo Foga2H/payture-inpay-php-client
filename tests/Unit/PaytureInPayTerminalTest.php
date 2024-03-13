@@ -217,7 +217,7 @@ final class PaytureInPayTerminalTest extends TestCase
         );
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->config = new TerminalConfiguration('MerchantKey', 'MerchantPassword', 'https://nowhere.payture.com/');
         $this->transport = $this->createMock(TransportInterface::class);

@@ -16,8 +16,8 @@ abstract class AbstractTerminalTestCase extends TestCase
     private const ENV_KEY = 'PAYTURE_TEST_MERCHANT_KEY';
     private const ENV_PASSWORD = 'PAYTURE_TEST_MERCHANT_PASSWORD';
 
-    protected const SANDBOX_PAY_SUBMIT_URL = 'https://sandbox.payture.com/apim/PaySubmit';
-    protected const SANDBOX_API_URL = 'https://sandbox.payture.com';
+    protected const SANDBOX_PAY_SUBMIT_URL = 'https://sandbox3.payture.com/apim/PaySubmit';
+    protected const SANDBOX_API_URL = 'https://sandbox3.payture.com';
 
     /** @var PaytureInPayTerminalInterface */
     private $terminal;
@@ -43,7 +43,7 @@ abstract class AbstractTerminalTestCase extends TestCase
         return new Card('4111111111100031', '123', '22', '12', 'AUTO TESTS');
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         if (getenv(self::ENV_KEY) === false || getenv(self::ENV_PASSWORD) === false) {
             self::markTestSkipped(

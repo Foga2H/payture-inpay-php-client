@@ -36,11 +36,10 @@ final class GuzzleHttpPaytureTransportTest extends TestCase
         self::assertEquals($response, $transport->request(PaytureOperation::INIT(), 'apim', []));
     }
 
-    /**
-     * @expectedException \Lamoda\Payture\InPayClient\Exception\TransportException
-     */
     public function testTransportConvertsGuzzleExceptionToTransportException(): void
     {
+        $this->expectException(\Lamoda\Payture\InPayClient\Exception\TransportException::class);
+
         $client = $this->createMock(ClientInterface::class);
         $config = new TerminalConfiguration('MerchantKey', 'MerchantPassword', 'https://nowhere.payture.com/');
 

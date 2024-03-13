@@ -127,35 +127,27 @@ final class TerminalResponseBuilderTest extends TestCase
         ];
     }
 
-    /**
-     * @expectedException \Lamoda\Payture\InPayClient\Exception\InvalidResponseException
-     */
     public function testBuilderThrowsExceptionForInvalidXml(): void
     {
+        $this->expectException(\Lamoda\Payture\InPayClient\Exception\InvalidResponseException::class);
         TerminalResponseBuilder::parseTransportResponse('Definitely not an XML string', PaytureOperation::INIT());
     }
 
-    /**
-     * @expectedException \Lamoda\Payture\InPayClient\Exception\InvalidResponseException
-     */
     public function testBuilderThrowsExceptionForOperationMismatch(): void
     {
+        $this->expectException(\Lamoda\Payture\InPayClient\Exception\InvalidResponseException::class);
         TerminalResponseBuilder::parseTransportResponse('<Charge Success="True"/>', PaytureOperation::INIT());
     }
 
-    /**
-     * @expectedException \Lamoda\Payture\InPayClient\Exception\InvalidResponseException
-     */
     public function testBuildThrowsExceptionIfNoAttributeDefined(): void
     {
+        $this->expectException(\Lamoda\Payture\InPayClient\Exception\InvalidResponseException::class);
         TerminalResponseBuilder::parseTransportResponse('<Charge/>', PaytureOperation::CHARGE());
     }
 
-    /**
-     * @expectedException \Lamoda\Payture\InPayClient\Exception\InvalidResponseException
-     */
     public function testBuildThrowsExceptionIfNoSuccessAttributeDefined(): void
     {
+        $this->expectException(\Lamoda\Payture\InPayClient\Exception\InvalidResponseException::class);
         TerminalResponseBuilder::parseTransportResponse('<Charge Amount="10000"/>', PaytureOperation::CHARGE());
     }
 }

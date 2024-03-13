@@ -24,19 +24,15 @@ final class GuzzleHttpOptionsBagTest extends TestCase
         self::assertEquals(['timeout' => 15], $bag->getOperationOptions(PaytureOperation::INIT()));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testInvalidOptionCausesValidationException(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
         new GuzzleHttpOptionsBag(['invalid option' => 5]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testInvalidOperationCausesValidationException(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
         new GuzzleHttpOptionsBag([], ['Init' => ['invalid option' => 5]]);
     }
 }
